@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--Metadata-->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--Title and Icon-->
+    <title>Cozen Pocket</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+
+    <!--CSS Links-->
+    <link rel="stylesheet" href="/style.css">
+
+    <!--JavaScript Import Links-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+
+    <!--JavaScript for Mortgage Calculations-->
+    <script src="/mortgage-calculator.js"></script>
+</head>
+<body>
+    <div class="logo-container">
+        <p align="center">
+            <a href="#">
+                <img src="/images/cozen-pocket-logo.png" width="488" alt="Cozen Pocket Mortgage Calculator" border="0" style="max-width: 50%;" target="_blank">
+            </a>
+        </p>
+    </div>
+
+    <div class="container">
+        <!--Inputs-->
+        <form id="myForm">
+            <div>
+                <label class="label"> Client Name: </label>
+                <input type="text" id="clientName">
+            </div>
+
+            <div>
+                <label class="label"> Home Value: </label>
+                <input type="number" id="homeValue">
+            </div>
+            
+            <div>
+                <label class="label"> Down Payment: </label>
+                <input type="number" id="downPayment">
+            </div>
+            
+            <div>
+                <label class="label"> Interest Rate (%): </label>
+                <input type="number" id="interestRate">
+            </div>
+            
+            <div>
+                <label class="label"> Loan Duration (years): </label>
+                <input type="number" id="loanDuration">
+            </div>
+            
+            <div>
+                <label class="label"> Additional Payment: </label>
+                <input type="number" id="additionalPayment">
+            </div>
+            
+            
+            <!--Buttons-->
+            <div class="buttons">
+                <input type="reset" id="reset-btn" onclick="window.location.reload()">
+                <input type="button" value="Calculate" onclick="calculateMortgage()">
+            </div>
+        </form>
+        <h1>Your Monthly Payment is <span id="monthlyPay"></span> </h1>
+    </div>
+
+    <div class="output">
+        <div id="result">
+            <h3 id="name"></h3>
+        </div>
+        <div class="chart" style="width: 50%;">
+            <canvas id="myChart"></canvas>
+        </div>
+    </div>
+   
+</body>
+</html>
